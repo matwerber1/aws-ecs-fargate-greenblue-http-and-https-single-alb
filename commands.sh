@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# this script builds a new local Docker image from the Dockerfile and uploads to AWS ECR
+
 REPO_NAME=docker-node-listener
 
 #aws ecr create-repository --repository-name $REPO_NAME
