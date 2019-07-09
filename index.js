@@ -31,8 +31,14 @@ if (request.status === 200) {
 // this is the handler for all HTTP requests received on port 80
 app1.get('/', function (req, res) {
   
-  var msg = `Hello World from Express+NodeJS app1! Protocol is ${req.protocol} on port ${port1}.<br/><br/>ECS Metadata:<br/>${(JSON.stringify(ecsMetadata,null,2)).replace(newline_regex, "<br/>")}`;
-  res.send(msg);
+    var msg = `
+        ${new Date().toString()}<br/>
+        Hello World from Express+NodeJS app1! <br/>
+        Protocol is ${req.protocol} on port ${port1}.<br/><br/>\
+        ECS Metadata:<br/>
+        ${(JSON.stringify(ecsMetadata, null, 2)).replace(newline_regex, "<br/>")}
+    `;
+    res.send(msg);
   
 });
 
@@ -44,7 +50,13 @@ app1.listen(port1, function () {
 // this is the handler for all HTTPS requests received on port 443
 app2.get('/', function (req, res) {
   
-  var msg = `Hello World from Express+NodeJS app2! Protocol is ${req.protocol} on port ${port2}.<br/><br/>ECS Metadata:<br/>${(JSON.stringify(ecsMetadata,null,2)).replace(newline_regex, "<br/>")}`;
+    var msg = `
+        ${new Date().toString()}<br/>
+        Hello World from Express+NodeJS app2!<br/>
+        Protocol is ${req.protocol} on port ${port2}.<br/><br/>
+        ECS Metadata:<br/>
+        ${(JSON.stringify(ecsMetadata, null, 2)).replace(newline_regex, "<br/>")}
+    `;
   res.send(msg);
   
 });
