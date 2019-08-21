@@ -6,7 +6,9 @@ https://aws.amazon.com/about-aws/whats-new/2019/07/amazon-ecs-services-now-suppo
 
 My strategy below was prior to the update above and required running the same container as two separate services, one for HTTP and one for HTTPS, because at that time, an ECS service could only be assigned to one target group. 
 
-The current recommendation is to use the new method above, rather than the method in this project. 
+If you're looking to run a single Fargate service to handle both HTTP and HTTPS (or any other multi-target group strategy), you should use the new method above. 
+
+If you're just looking for sample code on Fargate blue/green deployments, then this project may still be useful.
 
 # Purpose
 
